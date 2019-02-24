@@ -2,75 +2,44 @@
  * Novice
  */
 public class Novice {
-
-    private int hp = 1000, mp = 500, exp = 0, money = 1000, level = 0;
+    protected String skill;
+    protected int hp, mp , exp, money, level ;
     private String name, gender;
     private String head="STD", body="STD", legs="STD";
     private int itemLevel = 0;
     Bag bag = new Bag();
 
-    public void showBag() {
-        bag.showItem();
-    }
+    
 
-    public void useHpPotion() {
-        if (bag.dissHpPotion() <= 0) {
-            System.out.println("Out of Potion");
-        } else {
-            hp = hp + bag.i1.upHp();
-        }
-    }
+    //////Novice detail//////
 
-    public void useMpPotion() {
-        if (bag.dissMpPotion() <= 0) {
-            System.out.println("Out of Potion");
-        } else {
-            mp = mp + bag.i1.upMp();
-        }
-
-    }
-
-    public void useExpPotion(){
-        if (bag.dissExpPotion()<=0) {
-            System.out.println("Out of Potion");
-        }else{
-            exp = exp + bag.i1.upExp();
-        }
-    }
-
-    public void useExp() {
-        if (bag.dissExpPotion() <= 0) {
-            System.out.println("Out of Potion");
-        } else {
-            exp = exp + bag.i1.upExp();
-        }
-    }
-
+    
     public Novice(String name, String gender) {
         this.name = name;
         this.gender = gender;
+        this.hp = 1000;
+        this.mp = 500;
+        this.exp = 0;
+        this.money =1000;
+        this.level = 0;
     }
-
-    public Novice(String head, String body, String shose) {
+    ////Constructor for CHARACTER
+    public void characterOfNovice(String head, String body, String shose) {
         this.head = "Empty";
         this.body = "Empty";
         this.legs = "Empty";
     }
 
-    public Novice() {
-
+    public void upLevel(){
+        level++;
     }
+    
 
-    public void reduceHp(int damageReceived) {
-        hp = hp - damageReceived;
-    }
-
-    public void reduceMp(int manaUsed) {
-        mp = mp - manaUsed;
-    }
 
     public void showNovice() {
-        System.out.println("[[[[[[[[[[STATUS]]]]]]]]]]");
+        System.out.println("ooooooooooooooooooooooooo");
+        System.out.println("----------STATUS---------");
+        System.out.println("ooooooooooooooooooooooooo");
         System.out.println("Name:" + name);
         System.out.println("Gender:" + gender);
         System.out.println("Level:" + level);
@@ -78,9 +47,12 @@ public class Novice {
         System.out.println("Mp:" + mp);
         System.out.println("EXP:" + exp);
         System.out.println("Money:" + money);
-        System.out.println("[[[[[[[[[[CHARACTER]]]]]]]]]");
-        System.out.println("HEAD"+"-" + head +" "+"+"+ itemLevel);
-        System.out.println("BODY"+"-" + body +" "+"+"+itemLevel);
+
+        System.out.println("ooooooooooooooooooooooooopppp");
+        System.out.println("----------CHARACTER----------");
+        System.out.println("ooooooooooooooooooooooooooooo");
+        System.out.println("HEAD"+"-" + head +" "+" +"+ itemLevel);
+        System.out.println("BODY"+"-" + body +" "+"+"+ itemLevel);
         System.out.println("LEGS"+"-" + legs +" "+"+"+ itemLevel);
     }
 }

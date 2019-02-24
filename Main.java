@@ -1,4 +1,4 @@
-import java.awt.Menu;
+
 import java.util.Scanner;
 
 /**
@@ -8,55 +8,60 @@ public class Main {
 
     public static void main(String[] args) {
         String name, gender;
-        int Menu=0;
+
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter your name:");
+
+        System.out.print("Enter your name: ");
         name = sc.next();
-        System.out.println("Enter your gender");
+        System.out.print("Enter your gender: ");
         gender = sc.next();
 
-        Novice p1 = new Novice(name, gender);
-        Scanner read1 = new Scanner(System.in);
-        int action1;
-        p1.bag.i1.addPostion();
-        while (Menu == 0) {
         
-          System.out.println("-----------------------------");
-          System.out.println("-----Welcome To Ragnarok-----");
-          System.out.println("1.MyNovice");
-          System.out.println("2.Bag");
+        Novice n1 = new Novice(name, gender);
+        n1.bag.addItem();
+            int ac0=0 ;
+        
+          //--------------------------------------------------
           
-          action1 = read1.nextInt();
+          while (ac0 == 0) {
+
+            System.out.println("ooooooooooooooooooooooooooooo");
+            System.out.println("-----Welcome To Ragnarok-----");
+            System.out.println("ooooooooooooooooooooooooooooo");
+            System.out.println("1.MyNovice");
+            System.out.println("2.Bag");
+            System.out.println("3.Up Level");
+            Scanner ac1 = new Scanner(System.in);
+              int r1= ac1.nextInt();
+              if (r1 == 1) {
+                n1.showNovice();
+              }
+              else if (r1 == 2) {
+                n1.bag.showItem();
+                  Item i1 = new Item();
+                  MonsterEgg m1 = new MonsterEgg();
+                  OneHandSword s1 = new OneHandSword();
+                  i1.Detail();
+                  m1.addEggLists();
+                  m1.showMonsterLists();
+                  s1.detail();
+                
+              } 
+              else if (r1 == 3){
+                n1.upLevel();
+              }
+                
+              }
+          }
+      
+
+
+
+
+
+              }
         
-
-        if (action1 == 1) {
-                p1.showNovice();
-        } else if(action1 == 2){
-                 p1.showBag();
-                 int action2 = 0;
-                 Scanner read2 = new Scanner(System.in);
-                 
-                     while(action1==2){
-                 action2 = read2.nextInt();
-                    if (action2 == 1) {
-                 p1.useHpPotion();
-                 } 
-                    else if(action2 == 2){
-                 p1.useMpPotion();
-                 } 
-                    else if(action2 == 3){
-                     p1.useExpPotion();
-                 }
-                    else if(action2 == 0){
-                            break;
-                 }
-                    
-               }
-
-            }
-               }
-        }
-        }
+        
 
     
 
