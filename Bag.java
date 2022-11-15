@@ -17,6 +17,7 @@ public class Bag {
         items.add(new Item(1,"1-Hand Sword",1));
         items.add(new Item(2,"Monster Egg",1));
         items.add(new Item(2," Egg",1));
+        items.add(new Item(2," dev2",1));
     }
     
     public void showItem(){
